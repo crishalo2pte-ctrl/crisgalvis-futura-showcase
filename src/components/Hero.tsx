@@ -1,4 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const words = ["impresionan", "conectan", "descatacan"];
 
 export function Hero() {
   return (
