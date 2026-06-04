@@ -17,8 +17,8 @@ export function Footer() {
           </div>
           <div className="flex flex-col gap-4">
             <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground opacity-70">Contacto</span>
-            <a href="mailto:hola@crisgalvis.com" className="text-sm font-medium transition-colors hover:text-primary">Email</a>
-            <a href="#" className="text-sm font-medium transition-colors hover:text-primary">WhatsApp</a>
+            <a href="mailto:crisgalvis43@hotmail.com" className="text-sm font-medium transition-colors hover:text-primary">Email</a>
+            <a href="https://wa.me/543516524083?text=Hola%2Cestoy%20interesado%20en%20tener%20mi%20pagina%20web%20para%20aumentar%20mis%20ventas%20" className="text-sm font-medium transition-colors hover:text-primary">WhatsApp</a>
           </div>
         </div>
       </div>
