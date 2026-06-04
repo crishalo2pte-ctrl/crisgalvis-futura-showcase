@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "crisgalvis — Diseño de páginas web futuristas" },
-      { name: "description", content: "Portafolio de crisgalvis: diseño web premium con estética iPhone, animaciones futuristas y gamut de máxima calidad." },
+      { name: "description", content: "crisgalvis — Diseño web profesional: páginas que impresionan. Portafolio de diseño premium con estética iPhone, animaciones futuristas y gamut de máxima calidad." },
       { property: "og:title", content: "crisgalvis — Diseño de páginas web futuristas" },
       { property: "og:description", content: "Páginas web que se sienten vivas. Diseño premium inspirado en Apple para marcas que buscan destacar." },
       { property: "og:type", content: "website" },
