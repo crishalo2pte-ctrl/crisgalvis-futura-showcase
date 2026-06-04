@@ -1,4 +1,4 @@
-import lumina from "@/assets/project-lumina.jpg";
+import aurora from "@/assets/project-aurora.jpg";
 import vera from "@/assets/project-vera.jpg";
 import nexus from "@/assets/project-nexus.jpg";
 import atelier from "@/assets/project-atelier.jpg";
@@ -13,7 +13,7 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { title: "Lumina Banking", category: "Fintech Systems", year: "2025", img: lumina, accent: "from-primary/15", dot: "var(--apple-blue)" },
+  { title: "Aurora Analytics", category: "Plataforma SaaS de IA", year: "2025", img: aurora, accent: "from-primary/15", dot: "var(--apple-blue)" },
   { title: "Vera Studio", category: "Arquitectura", year: "2025", img: vera, accent: "from-accent-green/15", dot: "var(--apple-green)" },
   { title: "Nexus AI", category: "Plataforma de datos", year: "2024", img: nexus, accent: "from-accent-purple/15", dot: "var(--apple-purple)" },
   { title: "Atelier Faune", category: "E-commerce de moda", year: "2024", img: atelier, accent: "from-accent-orange/15", dot: "var(--apple-orange)" },
