@@ -5,7 +5,7 @@ export function Hero() {
     <section className="relative px-6 pb-32 pt-48">
       <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
         <span className="glass-surface animate-rise mb-8 rounded-full px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary shadow-sm">
-          Diseño web · Bogotá → Mundo
+          Diseño web · SEO · EXPERIENCIAS
         </span>
         <h1 className="animate-rise mb-8 max-w-[18ch] text-balance text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl lg:text-[5.5rem]" style={{ animationDelay: "80ms" }}>
           Páginas web que se sienten <span className="bg-gradient-to-r from-primary via-accent-purple to-accent-pink bg-clip-text italic font-light text-transparent">vivas</span>.
