@@ -5,7 +5,7 @@ export function Footer() {
         <div className="max-w-[32ch]">
           <h3 className="text-lg font-semibold">crisgalvis</h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            Diseño de páginas web con intención. Bogotá → Mundo.
+            Diseño de páginas web con intención. SEO · EXPERIENCIAS.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-16">
