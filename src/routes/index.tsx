@@ -1,29 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
+import { Portfolio } from "@/components/Portfolio";
+import { Detail } from "@/components/Detail";
+import { Process } from "@/components/Process";
+import { Testimonials } from "@/components/Testimonials";
+import { Cta } from "@/components/Cta";
+import { Footer } from "@/components/Footer";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { BgBlobs } from "@/components/BgBlobs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "crisgalvis — Diseño de páginas web futuristas" },
+      { name: "description", content: "Portafolio de crisgalvis: diseño web premium con estética iPhone, animaciones futuristas y gamut de máxima calidad." },
+      { property: "og:title", content: "crisgalvis — Diseño de páginas web futuristas" },
+      { property: "og:description", content: "Páginas web que se sienten vivas. Diseño premium inspirado en Apple para marcas que buscan destacar." },
+      { property: "og:type", content: "website" },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative min-h-screen">
+      <BgBlobs />
+      <Nav />
+      <Hero />
+      <Portfolio />
+      <Detail />
+      <Process />
+      <Testimonials />
+      <Cta />
+      <Footer />
+      <ThemeToggle />
+    </main>
   );
 }
