@@ -24,7 +24,7 @@ export function Hero() {
             <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
           <a
-            href="#contacto"
+            href="https://wa.me/543516524083?text=Hola%2Cestoy%20interesado%20en%20tener%20mi%20pagina%20web%20para%20aumentar%20mis%20ventas%20"
             className="glass-surface rounded-full px-6 py-3.5 text-sm font-medium transition-colors hover:text-primary"
           >
             Iniciar un proyecto

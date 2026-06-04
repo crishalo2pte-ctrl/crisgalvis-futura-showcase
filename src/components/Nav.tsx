@@ -10,7 +10,7 @@ export function Nav() {
         </div>
         <div className="h-4 w-px bg-border" />
         <a
-          href="#contacto"
+          href="https://wa.me/543516524083?text=Hola%2Cestoy%20interesado%20en%20tener%20mi%20pagina%20web%20para%20aumentar%20mis%20ventas%20"
           className="flex items-center gap-1.5 rounded-full bg-primary py-2 pl-2 pr-3 text-sm font-medium text-primary-foreground shadow-[0_4px_20px_oklch(0.62_0.18_255/0.35)] ring-1 ring-primary transition-transform active:scale-95"
         >
           <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-white/20">

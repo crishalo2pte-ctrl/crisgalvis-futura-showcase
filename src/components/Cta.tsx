@@ -23,7 +23,7 @@ export function Cta() {
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-3">
               <a
-                href="mailto:hola@crisgalvis.com"
+                href="https://wa.me/543516524083?text=Hola%2Cestoy%20interesado%20en%20tener%20mi%20pagina%20web%20para%20aumentar%20mis%20ventas%20"
                 className="group flex items-center gap-2 rounded-full bg-foreground px-7 py-4 text-sm font-medium text-background shadow-lg transition-transform active:scale-95"
               >
                 Escríbeme
