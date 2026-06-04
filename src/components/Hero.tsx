@@ -8,7 +8,7 @@ export function Hero() {
           Diseño web · SEO · EXPERIENCIAS
         </span>
         <h1 className="animate-rise mb-8 max-w-[18ch] text-balance text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl lg:text-[5.5rem]" style={{ animationDelay: "80ms" }}>
-          Páginas web que se sienten <span className="bg-gradient-to-r from-primary via-accent-purple to-accent-pink bg-clip-text italic font-light text-transparent">vivas</span>.
+          Tu éxito digital comienza <span className="bg-gradient-to-r from-primary via-accent-purple to-accent-pink bg-clip-text italic font-light text-transparent">aquí</span>.
         </h1>
         <p className="animate-rise mb-12 max-w-[52ch] text-pretty text-lg text-muted-foreground md:text-xl" style={{ animationDelay: "160ms" }}>
           Interfaces inspiradas en la precisión de Apple. Diseño impecable,
