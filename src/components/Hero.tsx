@@ -4,6 +4,15 @@ import { useState, useEffect } from "react";
 const words = ["impresionan", "conectan", "descatacan"];
 
 export function Hero() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative px-6 pb-32 pt-48">
       <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
