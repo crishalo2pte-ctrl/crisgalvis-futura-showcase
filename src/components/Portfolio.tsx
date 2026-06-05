@@ -1,3 +1,4 @@
+import { useState } from "react";
 import aurora from "@/assets/project-aurora.jpg";
 import vera from "@/assets/project-vera.jpg";
 import nexus from "@/assets/project-nexus.jpg";
@@ -14,34 +15,74 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { title: "Aurora Analytics", category: "Plataforma SaaS de IA", year: "2025", img: aurora, accent: "from-primary/15", dot: "var(--apple-blue)", description: "Dashboard analítico con visualizaciones en tiempo real e IA predictiva." },
-  { title: "Vera Studio", category: "Arquitectura", year: "2025", img: vera, accent: "from-accent-green/15", dot: "var(--apple-green)", description: "Sitio editorial para un estudio de arquitectura contemporánea." },
-  { title: "Nexus AI", category: "Plataforma de datos", year: "2024", img: nexus, accent: "from-accent-purple/15", dot: "var(--apple-purple)", description: "Interfaz de datos masivos con flujos animados y reportes inteligentes." },
-  { title: "Atelier Faune", category: "E-commerce de moda", year: "2024", img: atelier, accent: "from-accent-orange/15", dot: "var(--apple-orange)", description: "Tienda de moda premium con experiencia inmersiva y checkout fluido." },
-  { title: "Lumen Health", category: "App de bienestar", year: "2025", img: aurora, accent: "from-accent-pink/15", dot: "var(--apple-pink)", description: "App de salud integral con seguimiento biométrico y coach IA." },
-  { title: "Orbit Travel", category: "Plataforma de viajes", year: "2025", img: vera, accent: "from-primary/15", dot: "var(--apple-blue)", description: "Buscador de experiencias con mapas inteligentes y reservas en un toque." },
-  { title: "Forge Studio", category: "Agencia creativa", year: "2024", img: nexus, accent: "from-accent-orange/15", dot: "var(--apple-orange)", description: "Portafolio interactivo con scroll cinemático y transiciones líquidas." },
-  { title: "Pulse Fitness", category: "App fitness", year: "2025", img: atelier, accent: "from-accent-green/15", dot: "var(--apple-green)", description: "Entrenamientos adaptativos con métricas en tiempo real y comunidad." },
-  { title: "Helix Crypto", category: "Wallet Web3", year: "2024", img: aurora, accent: "from-accent-purple/15", dot: "var(--apple-purple)", description: "Wallet multichain con UX simplificada y seguridad de nivel bancario." },
-  { title: "Mira Beauty", category: "Marca de cosmética", year: "2025", img: atelier, accent: "from-accent-pink/15", dot: "var(--apple-pink)", description: "Storytelling de producto con paleta sensorial y compra sin fricción." },
+  { title: "Aurora Analytics", category: "Dashboard", year: "2025", img: aurora, accent: "from-primary/15", dot: "var(--apple-blue)", description: "Dashboard analítico con visualizaciones en tiempo real e IA predictiva." },
+  { title: "Vera Studio", category: "Landing", year: "2025", img: vera, accent: "from-accent-green/15", dot: "var(--apple-green)", description: "Sitio editorial para un estudio de arquitectura contemporánea." },
+  { title: "Nexus AI", category: "SaaS", year: "2024", img: nexus, accent: "from-accent-purple/15", dot: "var(--apple-purple)", description: "Interfaz de datos masivos con flujos animados y reportes inteligentes." },
+  { title: "Atelier Faune", category: "E-commerce", year: "2024", img: atelier, accent: "from-accent-orange/15", dot: "var(--apple-orange)", description: "Tienda de moda premium con experiencia inmersiva y checkout fluido." },
+  { title: "Lumen Health", category: "SaaS", year: "2025", img: aurora, accent: "from-accent-pink/15", dot: "var(--apple-pink)", description: "App de salud integral con seguimiento biométrico y coach IA." },
+  { title: "Orbit Travel", category: "Landing", year: "2025", img: vera, accent: "from-primary/15", dot: "var(--apple-blue)", description: "Buscador de experiencias con mapas inteligentes y reservas en un toque." },
+  { title: "Forge Studio", category: "Landing", year: "2024", img: nexus, accent: "from-accent-orange/15", dot: "var(--apple-orange)", description: "Portafolio interactivo con scroll cinemático y transiciones líquidas." },
+  { title: "Pulse Fitness", category: "SaaS", year: "2025", img: atelier, accent: "from-accent-green/15", dot: "var(--apple-green)", description: "Entrenamientos adaptativos con métricas en tiempo real y comunidad." },
+  { title: "Helix Crypto", category: "Dashboard", year: "2024", img: aurora, accent: "from-accent-purple/15", dot: "var(--apple-purple)", description: "Wallet multichain con UX simplificada y seguridad de nivel bancario." },
+  { title: "Mira Beauty", category: "E-commerce", year: "2025", img: atelier, accent: "from-accent-pink/15", dot: "var(--apple-pink)", description: "Storytelling de producto con paleta sensorial y compra sin fricción." },
 ];
 
+const filters = ["Todos", "SaaS", "E-commerce", "Landing", "Dashboard"];
+
 export function Portfolio() {
+  const [activeFilter, setActiveFilter] = useState("Todos");
+
+  const filtered =
+    activeFilter === "Todos"
+      ? projects
+      : projects.filter((p) => p.category === activeFilter);
+
   return (
     <section id="proyectos" className="relative py-32">
       <div className="absolute inset-0 -z-10 backdrop-blur-3xl" style={{ background: "var(--bg-alt)" }} />
-      <div className="mx-auto mb-16 flex max-w-7xl items-end justify-between px-6">
+      <div className="mx-auto mb-10 flex max-w-7xl flex-col gap-6 px-6 md:flex-row md:items-end md:justify-between">
         <div>
-          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">Selección 2025</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">Seleccion 2025</span>
           <h2 className="mt-2 text-balance text-4xl font-semibold tracking-tight md:text-5xl">Trabajos recientes</h2>
         </div>
         <p className="hidden max-w-[36ch] text-pretty text-sm text-muted-foreground md:block">
-          10 proyectos seleccionados — pasa el cursor para expandir cada tarjeta.
+          {filtered.length} proyecto{filtered.length !== 1 ? "s" : ""} — pasa el cursor para expandir cada tarjeta.
         </p>
       </div>
 
+      <div className="mx-auto mb-12 flex max-w-7xl flex-wrap items-center gap-3 px-6">
+        {filters.map((f) => {
+          const count =
+            f === "Todos" ? projects.length : projects.filter((p) => p.category === f).length;
+          const isActive = activeFilter === f;
+          return (
+            <button
+              key={f}
+              onClick={() => setActiveFilter(f)}
+              className={`relative rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-300 ${
+                isActive
+                  ? "bg-primary text-primary-foreground shadow-[0_0_24px_-6px_var(--primary)]"
+                  : "bg-white/5 text-muted-foreground hover:bg-white/10 hover:text-foreground"
+              }`}
+            >
+              {f}
+              <span
+                className={`ml-2 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full text-[10px] font-bold transition-colors duration-300 ${
+                  isActive ? "bg-primary-foreground/20 text-primary-foreground" : "bg-white/10 text-muted-foreground"
+                }`}
+              >
+                {count}
+              </span>
+            </button>
+          );
+        })}
+        <span className="ml-auto text-sm text-muted-foreground md:hidden">
+          {filtered.length} resultado{filtered.length !== 1 ? "s" : ""}
+        </span>
+      </div>
+
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {projects.map((p, i) => (
+        {filtered.map((p, i) => (
           <article
             key={p.title}
             className="group relative isolate overflow-hidden rounded-[28px] glass-surface shadow-[0_20px_60px_-25px_oklch(0_0_0/0.25)] transition-all duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-[0_40px_100px_-25px_oklch(0_0_0/0.35)] sm:[&:hover]:scale-[1.03]"
@@ -80,7 +121,7 @@ export function Portfolio() {
                       rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-black opacity-0 transition-all duration-500 delay-100 group-hover:opacity-100"
                     >
-                      Quiero algo así →
+                      Quiero algo asi →
                     </a>
                   </div>
                 </div>
