@@ -1,3 +1,4 @@
+import { useState } from "react";
 import aurora from "@/assets/project-aurora.jpg";
 import vera from "@/assets/project-vera.jpg";
 import nexus from "@/assets/project-nexus.jpg";
@@ -14,17 +15,19 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { title: "Aurora Analytics", category: "Plataforma SaaS de IA", year: "2025", img: aurora, accent: "from-primary/15", dot: "var(--apple-blue)", description: "Dashboard analítico con visualizaciones en tiempo real e IA predictiva." },
-  { title: "Vera Studio", category: "Arquitectura", year: "2025", img: vera, accent: "from-accent-green/15", dot: "var(--apple-green)", description: "Sitio editorial para un estudio de arquitectura contemporánea." },
-  { title: "Nexus AI", category: "Plataforma de datos", year: "2024", img: nexus, accent: "from-accent-purple/15", dot: "var(--apple-purple)", description: "Interfaz de datos masivos con flujos animados y reportes inteligentes." },
-  { title: "Atelier Faune", category: "E-commerce de moda", year: "2024", img: atelier, accent: "from-accent-orange/15", dot: "var(--apple-orange)", description: "Tienda de moda premium con experiencia inmersiva y checkout fluido." },
-  { title: "Lumen Health", category: "App de bienestar", year: "2025", img: aurora, accent: "from-accent-pink/15", dot: "var(--apple-pink)", description: "App de salud integral con seguimiento biométrico y coach IA." },
-  { title: "Orbit Travel", category: "Plataforma de viajes", year: "2025", img: vera, accent: "from-primary/15", dot: "var(--apple-blue)", description: "Buscador de experiencias con mapas inteligentes y reservas en un toque." },
-  { title: "Forge Studio", category: "Agencia creativa", year: "2024", img: nexus, accent: "from-accent-orange/15", dot: "var(--apple-orange)", description: "Portafolio interactivo con scroll cinemático y transiciones líquidas." },
-  { title: "Pulse Fitness", category: "App fitness", year: "2025", img: atelier, accent: "from-accent-green/15", dot: "var(--apple-green)", description: "Entrenamientos adaptativos con métricas en tiempo real y comunidad." },
-  { title: "Helix Crypto", category: "Wallet Web3", year: "2024", img: aurora, accent: "from-accent-purple/15", dot: "var(--apple-purple)", description: "Wallet multichain con UX simplificada y seguridad de nivel bancario." },
-  { title: "Mira Beauty", category: "Marca de cosmética", year: "2025", img: atelier, accent: "from-accent-pink/15", dot: "var(--apple-pink)", description: "Storytelling de producto con paleta sensorial y compra sin fricción." },
+  { title: "Aurora Analytics", category: "Dashboard", year: "2025", img: aurora, accent: "from-primary/15", dot: "var(--apple-blue)", description: "Dashboard analítico con visualizaciones en tiempo real e IA predictiva." },
+  { title: "Vera Studio", category: "Landing", year: "2025", img: vera, accent: "from-accent-green/15", dot: "var(--apple-green)", description: "Sitio editorial para un estudio de arquitectura contemporánea." },
+  { title: "Nexus AI", category: "SaaS", year: "2024", img: nexus, accent: "from-accent-purple/15", dot: "var(--apple-purple)", description: "Interfaz de datos masivos con flujos animados y reportes inteligentes." },
+  { title: "Atelier Faune", category: "E-commerce", year: "2024", img: atelier, accent: "from-accent-orange/15", dot: "var(--apple-orange)", description: "Tienda de moda premium con experiencia inmersiva y checkout fluido." },
+  { title: "Lumen Health", category: "SaaS", year: "2025", img: aurora, accent: "from-accent-pink/15", dot: "var(--apple-pink)", description: "App de salud integral con seguimiento biométrico y coach IA." },
+  { title: "Orbit Travel", category: "Landing", year: "2025", img: vera, accent: "from-primary/15", dot: "var(--apple-blue)", description: "Buscador de experiencias con mapas inteligentes y reservas en un toque." },
+  { title: "Forge Studio", category: "Landing", year: "2024", img: nexus, accent: "from-accent-orange/15", dot: "var(--apple-orange)", description: "Portafolio interactivo con scroll cinemático y transiciones líquidas." },
+  { title: "Pulse Fitness", category: "SaaS", year: "2025", img: atelier, accent: "from-accent-green/15", dot: "var(--apple-green)", description: "Entrenamientos adaptativos con métricas en tiempo real y comunidad." },
+  { title: "Helix Crypto", category: "Dashboard", year: "2024", img: aurora, accent: "from-accent-purple/15", dot: "var(--apple-purple)", description: "Wallet multichain con UX simplificada y seguridad de nivel bancario." },
+  { title: "Mira Beauty", category: "E-commerce", year: "2025", img: atelier, accent: "from-accent-pink/15", dot: "var(--apple-pink)", description: "Storytelling de producto con paleta sensorial y compra sin fricción." },
 ];
+
+const filters = ["Todos", "SaaS", "E-commerce", "Landing", "Dashboard"];
 
 export function Portfolio() {
   return (
